@@ -1,19 +1,28 @@
-<h1>Picture一覧</h1>
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-<% @pictures.each do |picture| %>
-  <tr>
-    <td><%= picture.title %></td>
-    <td><%= picture.content %></td>
-    <td><%= link_to '詳細を確認する', picture_path(picture.id) %></td>
-    <td><%= link_to "Pictureを編集する", edit_picture_path(picture.id) %></td>
-    <td><%= link_to "Pictureを削除する", picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="container">
+  <h1>Picture一覧</h1>
+  <p><%= notice %></p>
+  <div class="content">
+    <div class="row">
+      <% @pictures.each do |picture| %>
+        <div class="col-md-6">
+          <div class="post">
+            <div class="picture_title">
+              <%= link_to picture.title, picture_path(picture.id) %>
+            </div>
+            <div class="picture_content">
+              <%= picture.content %>
+              <%= link_to '詳細を確認する', picture_path(picture.id) %>
+              <%= link_to "Pictureを編集する", edit_picture_path(picture.id) %>
+              <%= link_to "Pictureを削除する", picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+            </div>
+            <div class="user_name">
+              <%= picture.user.name %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <br>
 <%= link_to '新しくPictureを投稿する', new_picture_path %>

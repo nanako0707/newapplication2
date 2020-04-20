@@ -7,7 +7,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new
   end
   def create
-    @picture = Picture.create(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     if params[:back]
       render :new
     else
@@ -34,7 +34,7 @@ class PicturesController < ApplicationController
     redirect_to pictures_path, notice: "Pictureを削除しました！"
   end
   def confirm
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     render :new if @picture.invalid?
   end
   private
