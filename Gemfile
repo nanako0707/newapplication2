@@ -18,6 +18,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'dotenv-rails'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
