@@ -1,3 +1,10 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+<p id = "notice"><%= notice %></p>
+<p>
+  <strong>Image:</strong>
+  <% if @user.image? %>
+    <%= image_tag @user.image.url %>
+  <% end %>
+</p>
 <%= link_to '新しくPictureを投稿する', new_picture_path %>
