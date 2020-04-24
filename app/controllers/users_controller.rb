@@ -27,11 +27,15 @@ class UsersController < ApplicationController
         render :edit
       end
     else
-      redirect_to root_url
+      redirect_to "users/new"
     end
+  end
+  def favorites
+    @user = User.find_by(id: params[:id])
+    @favorites = Favorite.where(user_id: @user.id)
   end
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+  params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
   end
 end
