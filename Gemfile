@@ -19,6 +19,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'dotenv-rails'
+  gem 'faker'
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
