@@ -3,6 +3,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 module Newapplication2
   class Application < Rails::Application
+    config.assets.initialize_on_precompile = false
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     I18n.enforce_available_locales = false
