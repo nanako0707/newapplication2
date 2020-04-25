@@ -12,7 +12,6 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
-  config.active_record.dump_schema_after_migration = false
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.default_url_options = { host: 'https://radiant-savannah-91748.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
@@ -25,9 +24,10 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
-end
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+  config.active_record.dump_schema_after_migration = false
+end
