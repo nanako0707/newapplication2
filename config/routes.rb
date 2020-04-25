@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'sessions#new'
   resources :favorites, only: [:create, :destroy]
   get '/users/:id/favorites', to: 'users#favorites'
   resources :feeds
