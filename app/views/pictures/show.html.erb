@@ -1,6 +1,9 @@
+<%= link_to "Picture一覧画面にもどる", pictures_path %>
 <h1>Picture詳細画面</h1>
 <p>タイトル: <%= @picture.title %></p>
 <p>内容: <%= @picture.content %></p>
+<p><strong>Image:</strong>
+  <%= image_tag @picture.image.url if @picture.image? %></p>
 <% unless @picture.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
@@ -14,4 +17,3 @@
     <%= link_to "Pictureを削除する", picture_path(@picture.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
   </div>
 <% end %>
-<%= link_to "Picture一覧画面にもどる", pictures_path %>
