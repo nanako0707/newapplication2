@@ -3,8 +3,5 @@
   <%= picture=Picture.find_by(id: favorite.picture_id) %>
   <p>タイトル: <%= picture.title %></p>
   <p>本文: <%= picture.content %></p>
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag @picture.image.url if @picture.image? %>
-  </p>
+  <p>Image: <%= image_tag picture.image.url if picture.image? %></p>
 <% end %>
