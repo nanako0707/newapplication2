@@ -4,6 +4,8 @@
   <%= form.hidden_field :content %>
   <p>タイトル: <%= @picture.title %></p>
   <p>本文: <%= @picture.content %></p>
+  <p><strong>Image:</strong>
+    <%= image_tag @picture.image.url if @picture.image? %></p>
   <%= form.submit "登録する" %>
   <%= form.submit '戻る', name: 'back' %>
 <% end %>
