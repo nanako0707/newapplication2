@@ -19,7 +19,9 @@
   </div>
   <div class="image">
     <%= form.label :image %>
+    <%= image_tag(@picture.image.url)if@picture.image&&@picture.image.url %>
     <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
     <p><%= form.check_box :remove_image %>画像を削除する</p>
   </div>
   <%= form.submit %>

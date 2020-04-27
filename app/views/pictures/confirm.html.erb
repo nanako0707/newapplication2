@@ -2,6 +2,7 @@
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
   <p>タイトル: <%= @picture.title %></p>
   <p>本文: <%= @picture.content %></p>
   <p>

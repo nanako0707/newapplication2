@@ -4,7 +4,7 @@
 <p>内容: <%= @picture.content %></p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @picture.image.url if @picture.image? %>
+  <%= image_tag(@picture.image.url)if@picture.image&&@picture.image.url %>
 </p>
 <% unless @picture.user_id == current_user.id %>
   <% if @favorite.present? %>
