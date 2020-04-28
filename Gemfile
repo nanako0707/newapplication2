@@ -15,9 +15,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'dotenv-rails'
   gem 'faker'
 end
@@ -27,6 +24,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 group :test do
   gem 'capybara', '>= 2.15'
