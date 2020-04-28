@@ -73,12 +73,12 @@ class PicturesController < ApplicationController
   #privateメソッド配下にメソッドを記述すると、そのメソッドはPrivateMethodになり、そのクラスからしか呼び出せないようになる。
   private
   def picture_params
-  #セキュリティーのために、予め受け入れるデータを文字列、画像に指定する。pictureキーの、title...のみ取得を許可する。
-  params.require(:picture).permit(:title, :content, :image, :image_cache, :remove_image)
+    #セキュリティーのために、予め受け入れるデータを文字列、画像に指定する。pictureキーの、title...のみ取得を許可する。
+    params.require(:picture).permit(:title, :content, :image, :image_cache, :remove_image)
   end
   #idをキーとして値を取得するメソッドを追加
   def set_picture
-  #編集する内容を入力させる。すでに存在するデータを編集して、再度保存するidを元に、データベースから当該するデータを取得。
-  @picture = Picture.find(params[:id])
+    #編集する内容を入力させる。すでに存在するデータを編集して、再度保存するidを元に、データベースから当該するデータを取得。
+    @picture = Picture.find(params[:id])
   end
 end
