@@ -3,8 +3,8 @@
     <div id="error_explanation">
       <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
       <ul>
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
@@ -25,4 +25,4 @@
     <p><%= form.check_box :remove_image %>画像を削除する</p>
   </div>
   <%= form.submit %>
- <% end %>
+<% end %>

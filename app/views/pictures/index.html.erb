@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Picture一覧</h1>
-  <div class="link"><%= link_to '新しくPictureを投稿する', new_picture_path %></div>
+  <%= link_to '新しくPictureを投稿する', new_picture_path %></div>
   <div class="content">
     <div class="row">
       <% @pictures.each do |picture| %>
@@ -22,4 +22,3 @@
     </div>
   </div>
 </div>
-<br>
