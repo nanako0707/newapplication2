@@ -1,7 +1,10 @@
 <%= link_to "Picture一覧画面にもどる", pictures_path %>
 <% @favorites.each do |favorite| %>
-  <%= picture=Picture.find_by(id: favorite.picture_id) %>
+  <div hidden><%= picture=Picture.find_by(id: favorite.picture_id) %></div>
   <p>タイトル: <%= picture.title %></p>
   <p>本文: <%= picture.content %></p>
-  <p>Image: <%= image_tag picture.image.url if picture.image? %></p>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag picture.image.url if picture.image? %>
+  </p>
 <% end %>
